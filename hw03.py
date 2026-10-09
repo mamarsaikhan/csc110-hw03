@@ -24,20 +24,16 @@ def read_five_ints():
     """
     for idx in range ( len(grades) ):
         # for each idx in 0, 1,... 4 do:
-        # check if the input is not a digit print error
-        # convert to int
-        # check if the int is not in the interval [0 to 10] print error
-        # add the int to grades at index idx
 
-        in_str = input("Give me the next grade in [0 to 10]:")
+        in_str = input("Give me the next grade in [0 to 10]:") # check if the input is not a digit print error
         if not in_str.isdigit():
             print("Error in read_five_ints: input string is not for an integer")
             exit()
         num = int(in_str) # convert to int
-        if num < 0 or num > 10:
+        if num < 0 or num > 10: # check if the int is not in the interval [0 to 10] print error
             print("Error in read_five_ints: input integer outside of range")
             exit()
-        grades[idx] = num
+        grades[idx] = num # add the int to grades at index idx
             
     #Anything with this indentation is NO LONGER inside the loop
 
@@ -53,8 +49,24 @@ def pick_averaging_method():
     Any other input prints
     'Error in pick_averaging_method: incorrect option picked'.
     """
-    pass
-
+    choose_option = input("Pick 'a' for mean, 'b' for median, 'c' for mode: ") # ask user which method to use
+    if choose_option == "a":
+        print("picked: Mean")
+        avg = statistics.mean(grades)
+        return avg
+    elif choose_option == "b":
+        print("picked: Median")
+        avg = statistics.median(grades)
+        return avg
+    elif choose_option == "c":
+        print("picked: Mode")
+        avg = statistics.mode(grades)
+        return avg
+    else:
+        # any other letter is not allowed
+        print("Error in pick_averaging_method: incorrect option picked")
+        exit()
+        
 # Task 3:
 #  Complete the function "pick_visualization" below:
 def pick_visualization(average):
