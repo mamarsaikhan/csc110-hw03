@@ -1,5 +1,5 @@
 """
-Name: (put your name here)
+Name: Marla Amarsaikhan
 Peers: (add any collaborators)
 References: (anything you checked to solve this)
 """
@@ -29,8 +29,16 @@ def read_five_ints():
         # check if the int is not in the interval [0 to 10] print error
         # add the int to grades at index idx
 
-        pass
-
+        in_str = input("Give me the next grade in [0 to 10]:")
+        if not in_str.isdigit():
+            print("Error in read_five_ints: input string is not for an integer")
+            exit()
+        num = int(in_str) # convert to int
+        if num < 0 or num > 10:
+            print("Error in read_five_ints: input integer outside of range")
+            exit()
+        grades[idx] = num
+            
     #Anything with this indentation is NO LONGER inside the loop
 
 
