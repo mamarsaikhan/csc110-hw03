@@ -78,9 +78,15 @@ def pick_visualization(average):
     Any other input prints
     'Error in pick_visualization: incorrect option picked'.
     """
-    pass
-
-
+    visualization_option = input("Pick '1' for print average, or '2' for plot average: ") # ask user which visualization method to use
+    if visualization_option == "1":
+        print_list_and_average(average)
+    elif visualization_option == "2":
+        plot_grades(average)
+    else:
+        print("Error in pick_visualization: incorrect option picked")
+        exit()
+        
 # ---------------------------------------
 # Do not modify anything below this line
 # ---------------------------------------
